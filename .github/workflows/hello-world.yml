@@ -37,10 +37,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
   printer:
     name: Impressoras
-    needs:
-      - hello-world
+    #needs:
+    #  - hello-world
     runs-on: ubuntu-latest
     
     steps:
@@ -49,3 +50,14 @@ jobs:
         
       - name: Impressora 2
         run: echo Impressora ocupada
+  
+  final-job:
+    name: Ultimo job
+    runs-on: ubuntu-latest
+    needs:
+      - hello-world
+      - printer
+    steps:
+      - name: Mensaem Final
+        run: echo Mensagem final
+    
