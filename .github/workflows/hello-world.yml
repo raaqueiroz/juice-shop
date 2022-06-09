@@ -18,7 +18,7 @@ jobs:
   
   # This workflow contains a single job called "build"
   hello-world:
-    name: hello-world
+    name: Hello World
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -38,7 +38,9 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
   printer:
-    name: Printer
+    name: Impressoras
+    needs:
+      - hello-world
     runs-on: ubuntu-latest
     
     steps:
